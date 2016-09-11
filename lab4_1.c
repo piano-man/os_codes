@@ -22,7 +22,7 @@ w[0]=0;
 for(i=1;i<n;i++)
 {
 w[i]=w[i-1]+b[i-1];
-t[i]=w[i]+t[i];
+t[i]=w[i]+b[i];
 }
 for(i=0;i<n;i++)
 {
