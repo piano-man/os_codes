@@ -68,8 +68,8 @@ main()
 	}
 	if(c==2)
 	{
-		int fragments[10], block[10], file[10], m, n, number_of_blocks, number_of_files, temp, lowest = 10000;
-		static int block_arr[10], file_arr[10];
+		int fragments[100], block[100], file[100], m, n, number_of_blocks, number_of_files, temp, lowest = 10000;
+		static int block_arr[100], file_arr[100];
 		printf("\nEnter the Total Number of Blocks:\t");
 		scanf("%d", &number_of_blocks);
 		printf("\nEnter the Total Number of Files:\t");
@@ -103,6 +103,8 @@ main()
 					}
 				}
 				fragments[m] = lowest;
+				number_of_blocks+=1;
+				block[number_of_blocks]=lowest;
 				block_arr[file_arr[m]] = 1;
 				lowest = 10000;
 			}
