@@ -1,3 +1,5 @@
+# include<stdio.h>
+# include<stdlib.h>
 int main()
 {
 int i,n,min,k=1,btime=0;
