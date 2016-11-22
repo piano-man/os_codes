@@ -31,20 +31,41 @@ int main()
 }*/
 # include<stdio.h>
 # include<stdlib.h>
+struct page
+{
+int size;
+int offset;
+int number;
+};
 main()
 {
 printf("enter the number of pages");
 int p;
 scanf("%d",&p);
-int arr[p];
-int *arr1[p];
-printf("enter the size of pages");
+struct node *logical[p];
+int phy[5]={0};
+int log[p];
+int fault=0;
+int current;
+//struct page * rpage[p];
 int i;
 for(i=0;i<p;i++)
 {
-scanf("%d",&arr[i]);
-arr1[i]=(int *)malloc(arr[i]*sizeof(int));
-printf("%p",arr1[i]);
+log[i]=i;
 }
-
+for(i=0;i<p;i++)
+{
+logical[i]=(struct node *)malloc(sizeof(struct node));
+printf("enter the page size");
+scanf("%d",&(logical[i]->size));
+printf("enter the offset");
+scanf("%d",&(logical[i]->offset));
+printf("enter the page number");
+scanf("%d",&(logical[i]->number));
+}
+printf("enter the page number you want to retrieve");
+int no;
+scanf("%d",&no);
+int add;
+add=log[no]+logical[no]->offset;
 }
