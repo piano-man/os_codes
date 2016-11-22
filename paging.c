@@ -47,6 +47,7 @@ int phy[5]={0};
 int log[p];
 int fault=0;
 int current;
+int add;
 //struct page * rpage[p];
 int i;
 for(i=0;i<p;i++)
@@ -63,9 +64,14 @@ scanf("%d",&(logical[i]->offset));
 printf("enter the page number");
 scanf("%d",&(logical[i]->number));
 }
-printf("enter the page number you want to retrieve");
+/*printf("enter the page number you want to retrieve");
 int no;
 scanf("%d",&no);
 int add;
-add=log[no]+logical[no]->offset;
+add=log[no]+logical[no]->offset;*/
+for(i=0;i<p;i++)
+{
+printf("the address of page[%d] is",i);
+add=log[i]+(logical[i]->offset);
+}
 }

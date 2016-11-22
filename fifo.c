@@ -37,7 +37,7 @@ main()
 					change=0;
 				i++;
 			}
-			if(flag==1)
+			f(flag==1)
 				i++;
 			for(j=0;j<3;j++)
 			{
@@ -45,5 +45,5 @@ main()
 			}
 		}
 	}
-	printf("the number of faulta is : %d",fault);
+	printf("the number of faults is : %d",fault);
 }

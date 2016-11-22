@@ -15,6 +15,7 @@ main()
 	printf("1)first fit");
 	printf("2)best fit");
 	printf("3)worst fit");
+	int i;
 	int c;
 	scanf("%d",&c);
 	/*printf("enter the number of processes");
