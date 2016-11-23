@@ -2,10 +2,10 @@
 # include<stdlib.h>
 int main()
 {
-	int i,n,min,k=1,btime=0;
+	int i,n,min,k=0,time=0;
 	int bt[10],temp,j,at[10],wt[10],tt[10],ta=0,sum=0,p[10];
 	float wavg=0,tavg=0,tsum=0,wsum=0;
-	printf(" -------Shortest Job First Scheduling ( NP )-------\n");
+	printf(" -------Priority Scheduling ( NP )-------\n");
 	printf("\nEnter the No. of processes :");
 	scanf("%d",&n);
 
@@ -20,11 +20,11 @@ int main()
 	}
 	for(j=0;j<n;j++)
 	{
-		btime=btime+bt[j];
+		time=time+bt[j];
 		min=p[k];
 		for(i=k;i<n;i++)
 		{
-			if (btime>=at[i] && p[i]<min)
+			if (time>=at[i] && p[i]<min)
 			{
 
 				temp=at[k];
