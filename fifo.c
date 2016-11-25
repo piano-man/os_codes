@@ -1,49 +1,54 @@
-# include<stdio.h>
-# include<stdlib.h>
-main()
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
 {
-	int page[10]={1,2,3,4,2,5,6,3,4,5};
-	int fr[3];
-	int fault=0;
-	int i=0;
-	int tarr[3];
-	int flag;
-	int change=0;
-	for(i=0;i<3;i++)
-	{
-		tarr[i]=page[i];
+	int frames[100],pages[1000],n,f,av = 0,fault = 0;
+	int i,j,k = 0;
+	printf ( "Enter no. of pages ");
+	scanf ( "%d",&n );
+	printf ( "Enter no. of frames " );
+	scanf ( "%d",&f );
+	printf ( "Enter the pages " );
+
+	for ( i = 0;i < n;i++ ) {
+		scanf ( "%d",&pages[i] );
 	}
-	while(i<10)
-	{
 
-		int j;
+	for ( j = 0;j < f;j++ ) {
+		frames[j] = -1;
+		//		frames[j] = j+1;
+	}
 
-		if(i>2)
-		{
 
-			for(j=0;j<3;j++)
-			{
-				if(page[i]==tarr[j])
-				{flag=1;
-					break;
-				}
-			}
-			if(flag==0)
-			{
-				fault++;
-				tarr[change]=page[i];
-				change++;
-				if(change==2)
-					change=0;
-				i++;
-			}
-			if(flag==1)
-				i++;
-			for(j=0;j<3;j++)
-			{
-				printf("%d \n",tarr[j]);
+	printf ( "Page = NIL\t" );
+	for ( j = 0;j < f;j++ ) {
+		printf ( "%d\t",frames[j] );
+	}
+
+
+	for ( i = 0;i < n;i++ ) {
+		av = 0;
+		for ( j = 0;j < f;j++ ) {
+			if ( pages[i] == frames[j] ) {
+				av = 1;
 			}
 		}
+
+		if ( av == 0 ) {
+			frames[k] = pages[i];
+			k = ( k + 1 ) % f;
+			fault++;
+		}
+
+
+		printf ( "\nPage = %d\t", pages[i] );
+		for ( j = 0;j < f;j++ ) {
+			printf ( "%d\t",frames[j] );
+		}
+
 	}
-	printf("the number of faults is : %d",fault);
+
+	printf ( "\n\nNo. of page faults = %d\n",fault );
+	return 0;
 }

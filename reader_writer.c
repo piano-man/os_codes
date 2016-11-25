@@ -35,7 +35,7 @@ void *reader (void *parn) {
 int main () {
 	int i, nr, nw;
 
-	
+
 	pthread_t rdthread[20], wrthread[20];
 	printf ("Enter number of reader thread: ");
 	scanf ("%d", &nr);
@@ -58,4 +58,3 @@ int main () {
 
 	return 0;
 }
-

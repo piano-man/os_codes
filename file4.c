@@ -1,4 +1,5 @@
-int main(){
+int main()
+{
 	FILE *p;
 	char ch;
 	printf("enter the filename");
