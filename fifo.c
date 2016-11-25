@@ -37,11 +37,11 @@ main()
 					change=0;
 				i++;
 			}
-			f(flag==1)
+			if(flag==1)
 				i++;
 			for(j=0;j<3;j++)
 			{
-				printf("%d",tarr[j]);
+				printf("%d \n",tarr[j]);
 			}
 		}
 	}

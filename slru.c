@@ -42,17 +42,18 @@ int main()
 
 	for(i = 0; i < N_FRAMES;i++)
 
-        FRAMES[i] = USE_TIMES[i] = -1;
+		FRAMES[i] = USE_TIMES[i] = -1;
 
 
 
-    j = -1;
+	j = -1;
 
 	int avail, count = 0;
 
-    printf("REF. STRING\tPAGE FRAMES\n");
+	printf("REF. STRING\tPAGE FRAMES\n");
 
-	for(i = 1; i <= N_PAGES; i++) {
+	for(i = 1; i <= N_PAGES; i++) 
+	{
 
 		printf("%d\t\t", PAGES[i]);
 
@@ -64,31 +65,31 @@ int main()
 
 				USE_TIMES[k] = i;
 
-                avail = 1;
+				avail = 1;
 
-            }
+			}
 
-        }
+		}
 
-        if (avail == 0) {
+		if (avail == 0) {
 
-            if(i <= N_FRAMES)
+			if(i <= N_FRAMES)
 
-        		j = (j + 1) % N_FRAMES;
+				j = (j + 1) % N_FRAMES;
 
-            else {
+			else {
 
-                j = 0;
+				j = 0;
 
-                for(k = 1; k < N_FRAMES; k++) {
+				for(k = 1; k < N_FRAMES; k++) {
 
-                    if(USE_TIMES[k] < USE_TIMES[j])
+					if(USE_TIMES[k] < USE_TIMES[j])
 
-                        j = k;
+						j = k;
 
-                }
+				}
 
-            }
+			}
 
 
 
@@ -96,15 +97,15 @@ int main()
 
 			USE_TIMES[j] = i;
 
-            count++;
+			count++;
 
 
 
-            for(k = 0; k < N_FRAMES; k++)
+			for(k = 0; k < N_FRAMES; k++)
 
 				if(FRAMES[k] != -1)
 
-	            	printf("%d\t", FRAMES[k]);
+					printf("%d\t", FRAMES[k]);
 
 				else
 
@@ -116,7 +117,7 @@ int main()
 
 	}
 
-    printf("NO. OF PAGE FAULTS = %d\n", count);
+	printf("NO. OF PAGE FAULTS = %d\n", count);
 
 
 
